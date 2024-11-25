@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sutherland Cairo - Customer Service Adventure</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .button {
+            background-color: #008CBA;
+            color: white;
+            padding: 15px 32px;
+            margin: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        .game-stage {
+            margin-top: 30px;
+        }
+        .choice-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .congrats-message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Sutherland Cairo: Customer Service Adventure!</h1>
+    <p>Ready to unlock your future with us?</p>
+    
+    <button class="button" id="start-button">Start the Game</button>
+
+    <div class="game-stage hidden" id="stage-1">
+        <h2>Stage 1: Choose Your Superpower</h2>
+        <p>What's your superpower in customer service?</p>
+        <button class="choice-button" onclick="nextStage(1)">Fluent Communicator</button>
+        <button class="choice-button" onclick="nextStage(2)">Problem Solver</button>
+        <button class="choice-button" onclick="nextStage(3)">Quick Learner</button>
+    </div>
+
+    <div class="game-stage hidden" id="stage-2">
+        <h2>Stage 2: The Customer Challenge</h2>
+        <p>A customer calls in and says their order was delayed. What do you do?</p>
+        <button class="choice-button" onclick="nextStage(4)">Listen and offer a solution</button>
+        <button class="choice-button" onclick="nextStage(5)">Investigate and escalate</button>
+        <button class="choice-button" onclick="nextStage(6)">Offer a discount immediately</button>
+    </div>
+
+    <div class="game-stage hidden" id="stage-3">
+        <h2>Stage 3: Unlock the Rewards</h2>
+        <p>What excites you most about working at Sutherland Cairo?</p>
+        <button class="choice-button" onclick="nextStage(7)">High Salary</button>
+        <button class="choice-button" onclick="nextStage(8)">24/7 Transportation</button>
+        <button class="choice-button" onclick="nextStage(9)">Career Growth</button>
+    </div>
+
+    <div class="game-stage hidden" id="final-stage">
+        <h2 class="congrats-message">Congratulations! You’re ready to apply!</h2>
+        <p>Click the button below to start your journey with us.</p>
+        <a href="https://forms.gle/Sk5EEMtNa4KRZcKVA" class="button">Apply Now</a>
+    </div>
+
+    <script>
+        document.getElementById('start-button').onclick = function() {
+            document.getElementById('stage-1').classList.remove('hidden');
+            document.getElementById('start-button').classList.add('hidden');
+        }
+
+        function nextStage(stage) {
+            if (stage === 1) {
+                alert("Great! Fluent Communicator is a key strength for our team.");
+            } else if (stage === 4) {
+                alert("Well done! Listening and solving problems shows great customer service skills!");
+            } else if (stage === 7) {
+                alert("Fantastic choice! You're now ready to unlock the perks of working with us.");
+            }
+
+            if (stage < 3) {
+                document.getElementById('stage-' + stage).classList.add('hidden');
+                document.getElementById('stage-' + (stage + 1)).classList.remove('hidden');
+            } else {
+                document.getElementById('stage-3').classList.add('hidden');
+                document.getElementById('final-stage').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
