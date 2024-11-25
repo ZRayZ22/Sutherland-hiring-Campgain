@@ -1,7 +1,3 @@
-Here's a sample README file for a simple hiring website for Sutherland Global Services' Cairo site. This README includes information about the project, installation steps, and basic usage:
-
----
-
 # Sutherland Global Services - Cairo Hiring Website
 
 Welcome to the **Sutherland Global Services - Cairo Hiring Website**! This is a simple, user-friendly website designed to help Sutherland Global Services attract, review, and hire talented individuals for its Cairo site. The website allows potential candidates to learn about job opportunities, submit applications, and stay informed on the hiring process.
